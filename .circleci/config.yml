@@ -1,4 +1,4 @@
-version: 2.0
+version: 2.1
 
 orbs:
   aws-ecr: circleci/aws-ecr@0.0.4
@@ -12,11 +12,10 @@ jobs:
             - run:
                 name: Build Image
                 command: |
-                apt install util-linux coreutils && \
-                echo 'export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"' >> ~/.bash_profile . ~/.bash_profile &&\
-                ~/.breeze
-                
- 
+                    apt get install util-linux coreutils
+                    echo 'export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"' >> ~/.bash_profile . ~/.bash_profile
+                    ~/.breeze
+                    
 workflows:
     build-deploy:
         jobs:
