@@ -12,8 +12,8 @@ jobs:
             - run:
                 name: Build Image
                 command: |
-                    apt-get install util-linux coreutils
-                    export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+                    sudo apt-get install util-linux coreutils
+                    export PATH=/usr/local/opt/gnu-getopt/bin:$PATH
                     ./breeze
                     
 workflows:
