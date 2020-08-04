@@ -16,6 +16,7 @@ jobs:
             - checkout
             - run:
                 name: Build Image
+                workdir: ~/project
                 command: |
                     ./breeze build-image --python 3.6 \
                     --install-airflow-version 1.10.11 \
