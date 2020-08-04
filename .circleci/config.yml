@@ -13,7 +13,7 @@ jobs:
                 name: Build Image
                 command: |
                     apt-get install util-linux coreutils
-                    echo 'export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"' >> ~/.bash_profile . ~/.bash_profile
+                    export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
                     ./breeze
                     
 workflows:
