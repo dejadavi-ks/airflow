@@ -1,0 +1,19 @@
+version: 2.1
+
+orbs:
+  aws-ecr: circleci/aws-ecr@0.0.4
+  docker: circleci/docker@1.4.0
+
+jobs:
+    build:
+        machine: true
+        steps:
+            - checkout
+            - run:
+                name: Setup Breeze
+                command: |
+                    pwd
+workflows:
+    build-deploy:
+        jobs:
+            - build
