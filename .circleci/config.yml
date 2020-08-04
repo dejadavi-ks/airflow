@@ -14,6 +14,7 @@ jobs:
                 command: |
                     sudo apt-get install util-linux coreutils
                     export PATH=/usr/local/opt/gnu-getopt/bin:$PATH
+                    cd project
                     ./breeze
                     
 workflows:
