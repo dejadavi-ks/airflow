@@ -6,6 +6,7 @@ orbs:
 
 jobs:
     build:
+        workdir: ~/project
         machine: true
         steps:
             - run:
@@ -13,18 +14,17 @@ jobs:
                 command: |
                     sudo apt-get install util-linux coreutils
                     export PATH=/usr/local/opt/gnu-getopt/bin:$PATH
-            - checkout
+            - run: checkout
             - run:
                 name: Build Image
                 command: |
-                    cd ~/project
                     ./breeze build-image --python 3.6 \
                     --install-airflow-version 1.10.11 \
                     --extras all \
                     --forward-credentials \
                     --additional-dev-deps "libasound2-dev" \
                     --additional-runtime-deps "libasound2" \
-                    --install-airflow-refrence master \
+                    --install-airflow-reference master \
                     --production-image
                 
 workflows:
