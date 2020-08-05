@@ -10,13 +10,13 @@ jobs:
         machine: true
         steps:
             - run:
-                name: Prep Env
+                name: prepEnv
                 command: |
                     sudo apt-get install util-linux coreutils
                     export PATH=/usr/local/opt/gnu-getopt/bin:$PATH
             - checkout
             - run:
-                name: Build Image
+                name: buildImage
                 command: |
                     ./breeze build-image --python 3.6 \
                     --install-airflow-version 1.10.11 \
