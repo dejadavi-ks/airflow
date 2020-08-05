@@ -6,13 +6,10 @@ orbs:
 
 jobs:
     build-deploy:
-
-        working_directory: ~/project
-        machine: true
+        machine:
+            docker_layer_caching: true
         steps:
-
             - checkout
-
             - run:
                 name: Build Image
                 command: |
@@ -29,7 +26,6 @@ jobs:
                     --additional-runtime-deps "libasound2" \
                     --install-airflow-reference master \
                     --production-image
-
             - run:
                 name: Tag Image
                 command: |
