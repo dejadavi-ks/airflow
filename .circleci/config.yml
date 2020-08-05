@@ -8,11 +8,7 @@ jobs:
     build-deploy:
 
         working_directory: ~/project
-
-        machine:
-            image: circleci/classic:latest
-            docker_layer_caching: true
-
+        machine: true
         steps:
 
             - checkout
