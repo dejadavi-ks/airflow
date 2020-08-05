@@ -18,6 +18,7 @@ jobs:
             - run:
                 name: buildImage
                 command: |
+                    pwd && ls
                     ./breeze build-image --python 3.6 \
                     --install-airflow-version 1.10.11 \
                     --extras all \
