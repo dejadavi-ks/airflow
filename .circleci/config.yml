@@ -9,17 +9,13 @@ jobs:
         working_directory: ~/project
         machine: true
         steps:
-            - run:
-                name: Prep Env
-                command: |
-                    sudo apt-get install util-linux coreutils
-                    export PATH=/usr/local/opt/gnu-getopt/bin:$PATH
             - checkout
             - run:
                 name: Build Image
                 command: |
                     cd ~/project && \
-                    bash breeze build-image --python 3.6 \
+                    ./breeze build-image --python 3.6 \
+                    --assume-yes \
                     --install-airflow-version 1.10.11 \
                     --extras all \
                     --forward-credentials \
