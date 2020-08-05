@@ -16,6 +16,7 @@ jobs:
                     cd ~/project && \
                     ./breeze build-image --python 3.6 \
                     --assume-yes \
+                    -- verbose \
                     --install-airflow-version 1.10.11 \
                     --extras all \
                     --forward-credentials \
