@@ -30,7 +30,6 @@ jobs:
             - aws-ecr/ecr-login:
                 region : us-east-1
             - aws-ecr/push-image:
-                account-url: ${ACCOUNT_URL}
                 repo: airflow
                 tag: apache/airflow:master-python3.6
                             
