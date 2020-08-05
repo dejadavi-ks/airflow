@@ -13,17 +13,17 @@ jobs:
             - run:
                 name: Build Image
                 command: |
-                    cd ~/project && \
-                    ./breeze build-image --python 3.6 \
+                    export FORCE_ANSWER_TO_QUESTIONS="yes"
+                    cd ~/project
+                    ./breeze  shell -- -c "build-image --python 3.6 \
                     --assume-yes \
-                    -- verbose \
                     --install-airflow-version 1.10.11 \
                     --extras all \
                     --forward-credentials \
                     --additional-dev-deps "libasound2-dev" \
                     --additional-runtime-deps "libasound2" \
                     --install-airflow-reference master \
-                    --production-image
+                    --production-image"
                 
 workflows:
     build-deploy:
