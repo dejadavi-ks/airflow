@@ -10,9 +10,7 @@ jobs:
         machine:
             docker_layer_caching: true 
         steps:
-
             - checkout
-
             - run:
                 name: Build Image
                 command: |
@@ -29,10 +27,8 @@ jobs:
                     --additional-runtime-deps "libasound2" \
                     --install-airflow-reference master \
                     --production-image
-    
             - aws-ecr/ecr-login:
                 region : us-east-1
-
             - aws-ecr/push-image:
                 account-url: ${ACCOUNT_URL}
                 repo: airflow
