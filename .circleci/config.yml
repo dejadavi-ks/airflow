@@ -21,7 +21,7 @@ jobs:
                     --extras all \
                     --forward-credentials \
                     --backend mysql \
-                    --github-org dejadavi-ks \
+                    --github-organisation dejadavi-ks \
                     --github-repo airflow \
                     --additional-dev-deps "libasound2-dev" \
                     --additional-runtime-deps "libasound2" \
