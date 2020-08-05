@@ -4,10 +4,14 @@ orbs:
   aws-ecr: circleci/aws-ecr@0.0.4
   docker: circleci/docker@1.4.0
 
+  executors:
+    docker_build:
+      machine:
+        docker_layer_caching: true
+
 jobs:
     build-deploy:
-        machine:
-            docker_layer_caching: true
+        executor: docker_build
         steps:
             - checkout
             - run:
