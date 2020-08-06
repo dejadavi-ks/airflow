@@ -431,6 +431,10 @@ zendesk = [
 ]
 # End dependencies group
 
+extra_extras = [
+    "airflow-code-editor",
+]
+
 all_dbs = (cassandra + cloudant + druid + exasol + hdfs + hive + mongo + mssql + mysql +
            pinot + postgres + presto + vertica)
 
@@ -548,7 +552,7 @@ PROVIDERS_REQUIREMENTS: Dict[str, Iterable[str]] = {
     "ssh": ssh,
     "vertica": vertica,
     "yandex": yandexcloud,
-    "zendesk": zendesk,
+    "zendesk": zendesk
 }
 
 EXTRAS_REQUIREMENTS: Dict[str, Iterable[str]] = {
@@ -631,6 +635,7 @@ EXTRAS_REQUIREMENTS: Dict[str, Iterable[str]] = {
     'webhdfs': webhdfs,  # TODO: remove this in Airflow 2.1
     'winrm': winrm,  # TODO: remove this in Airflow 2.1
     'yandexcloud': yandexcloud,
+    'extra_extas': extra_extas
 }
 
 # Make devel_all contain all providers + extras + unique
